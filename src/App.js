@@ -1,11 +1,11 @@
 
-import './App.css';
+import Login from "./Authentication/Login";
 
 function App() {
   return (
-    <div className="App">
-      mail box client 
-    </div>
+    <>
+      <Login />
+    </>
   );
 }
 
