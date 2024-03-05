@@ -6,7 +6,7 @@
       width: 500px;
       margin: 0 auto;
       padding: 20px;
-      border: 1px solid #ccc;
+      border: 1px solid #4d16b3;
       border-radius: 5px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -29,14 +29,14 @@
       width: 100%;
       padding: 8px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
+      border: 1px solid #4d16b3;
       border-radius: 4px;
     }
   
     .loading{
       text-align: center;
       background-color: #212521;
-      color: #fff;
+      color: #4d16b3;
       border: none;
       padding: 10px 20px;
       border-radius: 3px;
@@ -45,7 +45,7 @@
     }
     
     .login-container form button[type="submit"] {
-      background-color:#ada5a58c ;
+      background-color:#6c40bdb2;
       font-weight: bold;
       color: black;
       border: none;
@@ -56,8 +56,8 @@
     }
     
     .login-container form button[type="submit"]:hover {
-      background-color: #212521;
-      color: #fff;
+      background-color: #6c40bdee;
+      color: #ffffffc2;
     }
   
     .button2{
@@ -67,13 +67,13 @@
     }
     .button2 button{ 
       border: none;
-      background-color: white;
+      background-color: #4d16b3;
       color: #000;
       margin-top: 20px;
     }
     
     .button2 button:hover{
-      background-color: white;
+      background-color: #4d16b3;
       color: #000;
       margin-top: 20px;
     }

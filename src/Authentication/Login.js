@@ -25,7 +25,7 @@ const Login = () => {
   useEffect(() => {
     // Redirect to the welcome page if already logged in
     if (isLoggedIn) {
-    //   navigate('/expense-tracker');
+    //   navigate('/');
     }
   }, [isLoggedIn]);
 
