@@ -1,3 +1,5 @@
+// Compose.js
+
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { EditorState } from "draft-js";
@@ -67,9 +69,9 @@ const Compose = () => {
                 toolbar={{
                   options: [
                     "inline",
-                    // "blockType",
-                    // "fontSize",
-                    // "fontFamily",
+                    "blockType",
+                    "fontSize",
+                    "fontFamily",
                     "list",
                     "textAlign",
                     "colorPicker",
@@ -85,7 +87,7 @@ const Compose = () => {
             </div>
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button className="button" variant="primary" type="submit" >
             Send
           </Button>
         </Form>
@@ -95,3 +97,5 @@ const Compose = () => {
 };
 
 export default Compose;
+
+

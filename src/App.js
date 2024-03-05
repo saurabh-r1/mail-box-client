@@ -1,29 +1,33 @@
-//App.js
+// App.js
 
-import Compose from "./components/Compose";
-import Header from "./components/Header"
-import Sidebar from "./components/Sidebar";
-
-// import Login from "./Authentication/Login";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Compose from './components/Compose';
+import Inbox from './components/Inbox';
+import SentMail from './components/SentMail';
+// import './App.css';
 
 function App() {
   return (
-    <>
-    <Header />
-    <div className="row">
-      <div className="col-3" >
-      <Sidebar />
+    <Router>
+      <div className="app">
+        <Header />
+        <div className="row">
+          <div className="col-2">
+            <Sidebar />
+          </div>
+          <div className="col-9 mt-4">
+            <Routes>
+              <Route path="/" element={<Compose />} />
+              <Route path="/inbox" element={<Inbox />} />
+              <Route path="/sent" element={<SentMail />} />
+            </Routes>
+          </div>
+        </div>
       </div>
-      <div className="col-8  mt-4 ">
-      <Compose  />
-      </div>
-    
-    
-    </div>
-    
-  
-      {/* <Login /> */}
-    </>
+    </Router>
   );
 }
 

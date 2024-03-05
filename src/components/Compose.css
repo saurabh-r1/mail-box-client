@@ -18,6 +18,8 @@
     background-color:#fff ;
   }
   
-  button{
-    margin: 5px auto;
+  .button{
+    width: 95px;
+    margin: 10px auto;
+    /* padding: 15px;  */
   }

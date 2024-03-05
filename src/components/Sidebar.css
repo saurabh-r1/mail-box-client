@@ -1,5 +1,6 @@
-.sidebar {
-    width: 200px;
+/* Sidebar.css */
+#sidebar {
+    width: 100vph;
     height: 800px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -9,12 +10,23 @@
     display: block;
     padding: 10px;
     margin-bottom: 10px;
+    /* border: 1px solid black; */
+    background-color: #fff;
     color: #333;
     text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
   }
-  
-  .activeLink {
-    background-color: #007bff;
-    color: white;
+
+  .navLink:hover {
+    background-color: #7777779a;
   }
+
+  #sidebar a.active:hover {
+    background-color:  #7777779a;
+  }
+ 
   
+  #sidebar a.active {
+    background-color: #b9b7b79a;
+  }

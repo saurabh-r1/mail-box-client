@@ -1,21 +1,23 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "./Sidebar.css"; 
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import './Sidebar.css';
 
 const Sidebar = () => {
+  const location = useLocation();
+  console.log('Current URL:', location.pathname);
+  
   return (
-    <div className="sidebar">
-      <button>Compose</button>
-      {/* <NavLink to="/compose" activeClassName="activeLink" className="navLink">
+    <nav id="sidebar">
+      <NavLink to="/" className="navLink" >
         Compose
       </NavLink>
-      <NavLink to="/inbox" activeClassName="activeLink" className="navLink">
+      <NavLink to="/inbox"  className="navLink">
         Inbox
       </NavLink>
-      <NavLink to="/sent" activeClassName="activeLink" className="navLink">
+      <NavLink to="/sent"  className="navLink">
         Sent Mail
-      </NavLink> */}
-    </div>
+      </NavLink>
+    </nav>
   );
 };
 

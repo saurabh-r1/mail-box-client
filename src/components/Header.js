@@ -1,13 +1,6 @@
+// Header.js
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Button,
-  Row,
-  Col,
-} from "react-bootstrap";
+import {Form} from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { logout } from "../Authentication/authSlice";
 import "./Header.css";
@@ -41,3 +34,4 @@ const Header = () => {
 };
 
 export default Header;
+

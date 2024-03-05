@@ -1,0 +1,91 @@
+/* App.css */
+
+.app {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+  }
+  
+  .div1 {
+    flex: 1;
+  }
+  
+  .div2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navLink {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .navLink.activeLink {
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .searchInput {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .editor {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 200px;
+  }
+  
+  /* You can add more styles as needed */
+  
