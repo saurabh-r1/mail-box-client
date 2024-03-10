@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+import { Button } from 'react-bootstrap';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const Sidebar = () => {
       </NavLink>
       <NavLink to="/inbox"  className="navLink">
         Inbox
+        <button className='count'>0</button>
       </NavLink>
       <NavLink to="/sent"  className="navLink">
         Sent Mail

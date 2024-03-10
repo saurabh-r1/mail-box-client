@@ -1,6 +1,6 @@
 // Header.js
 import React from "react";
-import {Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { logout } from "../Authentication/authSlice";
 import "./Header.css";
@@ -19,15 +19,16 @@ const Header = () => {
       </div>
 
       <div className="div2">
-        <Form>
+        <Form >
+          <div className="search">
           <input className="searchInput" type="text" placeholder="Search" />
-
           <button className="button">Search</button>
+          </div>
         </Form>
 
-        <button className="button" onClick={handleLogout}>
+        <Button variant="danger" className="button" onClick={handleLogout}>
           Logout
-        </button>
+        </Button>
       </div>
     </div>
   );

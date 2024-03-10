@@ -6,6 +6,7 @@ import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./Compose.css";
+import axios from "axios";
 
 const Compose = () => {
   const [email, setEmail] = useState("");
@@ -26,13 +27,33 @@ const Compose = () => {
     setEditorState(editorState);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Handle form submission here
+    
     const messageContent = editorState.getCurrentContent().getPlainText();
-    console.log("Email:", email);
-    console.log("Subject:", subject);
-    console.log("Message:", messageContent);
+
+    // Create email object
+    const emailData = {
+      sender: "sender@ifno.com", 
+      receiver: email,
+      subject: subject,
+      message: messageContent,
+      timestamp: Date.now()
+    };
+
+    try {
+      // Send email to Firebase
+      await axios.post("https://mail-5f4a0-default-rtdb.firebaseio.com/emails.json", emailData);
+
+      // Clear form fields after successful submission
+      setEmail("");
+      setSubject("");
+      setEditorState(EditorState.createEmpty());
+
+      console.log("Email sent successfully");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -46,6 +67,7 @@ const Compose = () => {
               value={email}
               onChange={handleEmailChange}
               placeholder="Enter email"
+              required
             />
           </Form.Group>
 
@@ -56,6 +78,7 @@ const Compose = () => {
               value={subject}
               onChange={handleSubjectChange}
               placeholder="Enter subject"
+              required
             />
           </Form.Group>
 
@@ -63,7 +86,7 @@ const Compose = () => {
             <Form.Label>Message:</Form.Label>
             <div className="editor">
               <Editor
-              placeholder="Enter your message"
+                placeholder="Enter your message"
                 editorState={editorState}
                 onEditorStateChange={handleEditorStateChange}
                 toolbar={{
@@ -87,7 +110,7 @@ const Compose = () => {
             </div>
           </Form.Group>
 
-          <Button className="button" variant="primary" type="submit" >
+          <Button className="sendButton" variant="primary" type="submit">
             Send
           </Button>
         </Form>
@@ -97,5 +120,3 @@ const Compose = () => {
 };
 
 export default Compose;
-
-
