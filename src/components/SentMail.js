@@ -1,7 +1,7 @@
 // SentMail.js
 
 import React, { useState, useEffect } from "react";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import axios from "axios";
 
 const SentMail = () => {
@@ -34,6 +34,19 @@ const SentMail = () => {
     }
   };
 
+  const handleDeleteEmail = async (id) => {
+    try {
+      await axios.delete(
+        `https://mail-5f4a0-default-rtdb.firebaseio.com/emails/${id}.json`
+      );
+
+      setSentEmails(sentEmails.filter((email) => email.id !== id));
+      console.log("Email deleted successfully");
+    } catch (error) {
+      console.error("Error deleting email:", error);
+    }
+  };
+
   return (
     <div className="container">
       <div className="box">
@@ -54,6 +67,12 @@ const SentMail = () => {
                 <strong>Sent:</strong>{" "}
                 {new Date(email.timestamp).toLocaleString()}
               </div>
+              <Button
+                variant="danger"
+                onClick={() => handleDeleteEmail(email.id)}
+              >
+                Delete
+              </Button>
             </ListGroup.Item>
           ))}
         </ListGroup>
